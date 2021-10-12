@@ -29,12 +29,11 @@ function Header({countryName}) {
     return (
         <React.Fragment>
             <nav className="navbar row">
-                <div className="col-12 col-md-3">
+                <div className="col-12 col-md-3 order-sm-1 col-sm-6 order-md-1">
                     <div className="logo_location">
                         <div className="navbar-brand">
                             <Link to="/" class='text-decoration-none'>
                                 <img src="../images/shopit_logo2.png" alt="Logo" />
-                                {/* <h4 className='logo'>Online Aid</h4> */}
                             </Link>
                         </div>
                         
@@ -44,8 +43,8 @@ function Header({countryName}) {
                                     <LocationOnOutlinedIcon className="location_icon" />
                                 
                                 <div className="options d-flex flex-column">
-                                    <span className="headerNav__optionLineOne text-white">Deliver to</span>
-                                    <span className="headerNav__optionLineTwo text-white">{countryName}</span>
+                                    <span className="headerNav__optionLineOne text-white app__text_color">Deliver to</span>
+                                    <span className="headerNav__optionLineTwo text-white app__text_color">{countryName}</span>
                                 </div>
                             </div>
                             )}
@@ -53,21 +52,21 @@ function Header({countryName}) {
                     </div>
                 </div>
 
-                <div className="col-12 col-md-6 mt-2 mt-md-0">
+                <div className="col-12 col-md-6 mt-2 mt-md-0 order-sm-3 col-sm-12 order-md-2">
                     <Route render={ ({history})=> <Search history={history} />} />
                 </div>
 
-                <div className="col-12 col-md-3 mt-4 mt-md-0 text-center">
+                <div className="col-12 col-md-3 mt-md-0 text-center order-sm-2 order-md-3 col-sm-6">
 
                     <Link to="/cart" className='cart_link'>
-                        <span id="cart" className="ml-3"><ShoppingCartSharpIcon /></span>
-                        <span className="cart_length_round" id="cart_count">{cartItems.length}</span>
+                        <span id="cart" className="ml-3 app__text_color"><ShoppingCartSharpIcon /></span>
+                        <span className="cart_length_round app__text_color" id="cart_count">{cartItems.length}</span>
                     </Link>
 
                     {user ? (
 
                         <div className="dropdow d-inline">
-                            <Link to='#!' className='btn dropdown-toggle text-white' id='dropDownMenuButton' type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                            <Link to='#!' className='btn dropdown-toggle text-white profile__zone' id='dropDownMenuButton' type='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
                                 <figure className="avatar avatar-nav">
                                     <img 
                                         src={user.avatar && user.avatar.url } 
@@ -75,7 +74,7 @@ function Header({countryName}) {
                                         className='rounded-circle'
                                     />
                                 </figure>
-                                <span className='text-white'>{user && user.name}</span>
+                                <span className='text-white app__text_color'>{user && user.name}</span>
                             </Link>
 
 

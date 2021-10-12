@@ -45,10 +45,18 @@ body {
 }
 
 nav {
-  background-color: #232f3e;
-  padding: 1rem 1rem;
+  background-color: #ffffff;
+  /* padding: 1rem 1rem; */
+  box-shadow: rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 6px 5px -6px rgb(0 0 0 / 61%);
+  margin-bottom: 10px;
 }
-
+.app__text_color{
+  
+  color: #000 !important;
+}
+/* .option > span, a, div{
+} */
 .headerNav__optionLineOne{
   font-size: 10px;
 }
@@ -60,19 +68,26 @@ nav {
   align-items: center;
   /* justify-content: center; */
 }
+.location_icon {
+  background: #f8f8f8;
+  border-radius: 50px;
+  margin-right: 6px;
+  padding: 3px;
+}
 
 #search_btn {
   background-color: var(--main-color);
+  padding: 5px 22px;
 }
 
 .input-group {
   width: 90%;
-  margin-right: 35%;
+  margin: 0 auto;
 }
 
 #search_field {
   height: 2.4rem;
-  padding: 1rem;
+  padding: 10px;
 }
 
 #login_btn,
@@ -375,6 +390,14 @@ footer {
 }
 
 /* Avatar */
+.dropdown-toggle {
+  white-space: nowrap;
+  background: #e6e6e6;
+  border-radius: 50px;
+  padding: 3px 4px;
+  width: auto;
+  margin-left: 5px;
+}
 .avatar {
   display: inline-block;
   margin-bottom: 0;
@@ -383,6 +406,11 @@ footer {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
+}
+.user_location {
+  background: #e6e6e6;
+  border-radius: 50px;
+  padding: 3px 10px;
 }
 
 .avatar img {
@@ -405,8 +433,8 @@ footer {
 
 .avatar-nav {
   margin-right: 0.6rem;
-  height: 2.2rem;
-  width: 2.2rem;
+  height: 30px;
+  width: 30px;
 }
 
 /* Checkout Steps */
@@ -604,12 +632,14 @@ a[aria-expanded='true'] {
 a[data-toggle='collapse'] {
   position: relative;
 }
+
 .dropdown-toggle::after {
   display: block;
   position: absolute;
   top: 50%;
   right: 20px;
   transform: translateY(-50%);
+  color: #000;
 }
 
 ul ul a {
