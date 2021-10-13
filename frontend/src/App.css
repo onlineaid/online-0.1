@@ -22,6 +22,14 @@ body {
   /* filter: blur(5px); */
 }
 
+.profile__zone{
+  white-space: nowrap;
+    background: #e6e6e6;
+    border-radius: 50px;
+    padding: 3px 4px;
+    width: auto;
+    margin-left: 5px;
+}
 .dropdown-menu {
   right: 0;
 }
@@ -390,14 +398,6 @@ footer {
 }
 
 /* Avatar */
-.dropdown-toggle {
-  white-space: nowrap;
-  background: #e6e6e6;
-  border-radius: 50px;
-  padding: 3px 4px;
-  width: auto;
-  margin-left: 5px;
-}
 .avatar {
   display: inline-block;
   margin-bottom: 0;
@@ -639,7 +639,14 @@ a[data-toggle='collapse'] {
   top: 50%;
   right: 20px;
   transform: translateY(-50%);
-  color: #000;
+  color:var(--main-color);
+}
+.dropdown-toggle::before {
+  position: absolute;
+  background: cyan;
+  
+  top: 50%;
+  right: 20px;
 }
 
 ul ul a {

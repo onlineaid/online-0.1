@@ -74,7 +74,10 @@ function Header({countryName}) {
                                         className='rounded-circle'
                                     />
                                 </figure>
-                                <span className='text-white app__text_color'>{user && user.name}</span>
+                                <span className='text-white app__text_color'>
+                                    {user && user.name}
+                                    {/* <i className="fa fa-tachometer"></i> */}
+                                </span>
                             </Link>
 
 
