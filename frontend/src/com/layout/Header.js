@@ -1,7 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Route, Link } from 'react-router-dom'
 import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
 import ShoppingCartSharpIcon from '@material-ui/icons/ShoppingCartSharp';
+
+import styled, { ThemeProvider } from "styled-components";
+import { lightTheme, darkTheme, GlobalStyles } from "./theme";
 
 import { useDispatch, useSelector } from "react-redux";
 import { useAlert } from 'react-alert';
@@ -16,17 +19,30 @@ function Header({countryName}) {
     const dispatch = useDispatch();
     const {user, loading} = useSelector(state => state.auth)
     const {cartItems} = useSelector(state => state.cart)
+
+    
     
 
     const logoutHandler = () => {
         dispatch(logout());
         alert.success('Logout successfully.')
-
     }
 
+    const StyledApp = styled.div`
+    color: ${(props) => props.theme.fontColor};
+    `;
+    
+    const [theme, setTheme] = useState("light");
 
+    const themeToggler = () => {
+      theme === "light" ? setTheme("dark") : setTheme("light");
+    };
 
     return (
+    <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+    <GlobalStyles />
+    <StyledApp>
+    </StyledApp>
         <React.Fragment>
             <nav className="navbar row">
                 <div className="col-12 col-md-3 order-sm-1 col-sm-6 order-md-1">
@@ -41,6 +57,7 @@ function Header({countryName}) {
                             {countryName !== "" && (
                             <div className="header__delivery">
                                     <LocationOnOutlinedIcon className="location_icon" />
+                                    
                                 
                                 <div className="options d-flex flex-column">
                                     <span className="headerNav__optionLineOne text-white app__text_color">Deliver to</span>
@@ -57,6 +74,12 @@ function Header({countryName}) {
                 </div>
 
                 <div className="col-12 col-md-3 mt-md-0 text-center order-sm-2 order-md-3 col-sm-6">
+
+                <label class="switch mb-0">
+                    <input type="checkbox" onClick={() => themeToggler()} />
+                    <span class="slider round"></span>
+                </label>
+                    {/* <button >btn</button> */}
 
                     <Link to="/cart" className='cart_link'>
                         <span id="cart" className="ml-3 app__text_color"><ShoppingCartSharpIcon /></span>
@@ -108,6 +131,7 @@ function Header({countryName}) {
                 </div>
             </nav>
         </React.Fragment>
+        </ThemeProvider>
     )
 }
 

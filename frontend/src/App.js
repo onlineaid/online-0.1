@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-// import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { BrowserRouter as Router, Route,} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route,} from "react-router-dom";
 import './App.css';
 import Header from "./com/layout/Header";
 import Footer from "./com/layout/Footer";
 import Home from "./com/Home";
+
 
 // cart import 
 import Cart from "./com/cart/Cart";
@@ -19,6 +19,8 @@ import OrderDetails from "./com/order/OrderDetails";
 
 // product import 
 import ProductDetails from "./com/product/ProductDetails";
+
+// import TermsCondition from "./com/policy/TermsCondition";
 
 // user import
 import Login from "./com/user/Login";
@@ -58,7 +60,6 @@ import { loadStripe } from '@stripe/stripe-js'
 function App() {
 
   const [userLocDetails, setUserLocDetails] = useState();
-
   const [stripeApiKey, setStripeApiKey] = useState('');
 
   useEffect(() => {
@@ -77,9 +78,8 @@ function App() {
       };
       getUserGeoLocationDetails();
     }
-    // return () => {
-      store.dispatch(loadUser());
-      // }
+    
+    store.dispatch(loadUser());
 
     async function getStripeApiKey() {
       const {data} = await axios.get('/api/v1/stripeapi')
@@ -91,7 +91,6 @@ function App() {
   }, [])
 
   const { user, isAuthenticated, loading } = useSelector(state => state.auth)
-
 
   return (
     <Router>
@@ -141,6 +140,7 @@ function App() {
           <ProtectedRoutes path="/admin/slider" isAdmin={true} component={CreateSlider} exact />
           {/* <ProtectedRoutes path="/admin/slider/:id" isAdmin={true} component={UpdateSlider} exact /> */}
 
+
           {!loading && (!isAuthenticated || user.role !== 'admin') && (
             <Footer />
           )} 
@@ -151,6 +151,3 @@ function App() {
 }
 
 export default App;
-
-
-// Solved problem 

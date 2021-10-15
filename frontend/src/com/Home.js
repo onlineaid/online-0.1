@@ -7,7 +7,6 @@ import Product from './product/Product';
 import Loader from './layout/Loader';
 
 import SliderBanner from "../com/slider/Slider";
-// import Cproduct from './Cproduct';
 
 import { useDispatch, useSelector} from "react-redux";
 import { useAlert } from 'react-alert';
@@ -79,7 +78,6 @@ function Home({ match }) {
             {loading ? <Loader /> : (
                 <React.Fragment>
                     <MetaData title={'Buy best product online'} />
-                        
                     <SliderBanner />
 
                     <div className="heading text-center">

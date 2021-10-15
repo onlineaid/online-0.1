@@ -1,5 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import TermsCondition from '../policy/TermsCondition';
 function Footer() {
     const currentYear = new Date().getFullYear();
 
@@ -11,11 +12,12 @@ function Footer() {
                         <div className="row">
                             <div className="col-md-3 ft-link-control">
                                 <h5 className="mb-3">EXTRAS</h5>
-                                <Link to='#'>Brands</Link>
+                                <Link to='/terms'>Terms Condition</Link>
                                 <Link to='#'>Gift Certificates</Link>
                                 <Link to='#'>Affiliate</Link>
                                 <Link to='#'>Specials</Link>
                                 <Link to='#'>Site Map</Link>
+                                {TermsCondition}
                             </div>
                             <div className="col-md-3 ft-link-control">
                                 <h5 className="mb-3">INFORMATION</h5>
