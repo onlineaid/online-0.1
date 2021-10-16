@@ -75,14 +75,11 @@ function Header({countryName}) {
 
                 <div className="col-12 col-md-3 mt-md-0 text-center order-sm-2 order-md-3 col-sm-6">
 
-                <label class="switch mb-0">
-                    <input type="checkbox" onClick={() => themeToggler()} />
-                    <span class="slider round"></span>
-                </label>
+                
                     {/* <button >btn</button> */}
 
                     <Link to="/cart" className='cart_link'>
-                        <span id="cart" className="ml-3 app__text_color"><ShoppingCartSharpIcon /></span>
+                        <span id="cart" className="ml-3 cart"><ShoppingCartSharpIcon /></span>
                         <span className="cart_length_round app__text_color" id="cart_count">{cartItems.length}</span>
                     </Link>
 
@@ -116,6 +113,12 @@ function Header({countryName}) {
                                 <Link to="/" className="dropdown-item text-danger" onClick={logoutHandler}>
                                     Logout
                                 </Link>
+                                <div className="dark__mood"> Dark Mood
+                                    <label class="switch mb-0">
+                                        <input type="checkbox" onClick={() => themeToggler()} />
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
                             </div>
 
 
