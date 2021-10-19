@@ -1,5 +1,7 @@
 :root {
-  --main-color: hotpink;
+  --main-color: #0000CD;
+  --white: #fff;
+  --red: red;
 }
 .app__text_color{
   color: #000 !important;
@@ -69,6 +71,7 @@ nav {
 #search_btn {
   background-color: var(--main-color);
   padding: 5px 22px;
+  color: var(--white)
 }
 
 .input-group {
@@ -166,7 +169,10 @@ input:checked + .slider:before {
   background-color: var(--main-color);
   padding: 0.4rem 1.8rem;
   font-family: calibri;
+  color: var(--white);
+  border-radius: 50px;
 }
+
 
 /* #cart {
   font-size: 1rem;
@@ -174,10 +180,10 @@ input:checked + .slider:before {
 } */
 
 #cart_count {
-  background-color: var(--main-color);
+  background-color: var(--red);
   padding: 0.2rem 0.5rem;
   border-radius: 0.2rem;
-  color: black;
+  color: var(--white);
   font-weight: bold;
   font-size: 0.7rem;
   border-radius: 50px;

@@ -80,7 +80,7 @@ function Header({countryName}) {
 
                     <Link to="/cart" className='cart_link'>
                         <span id="cart" className="ml-3 cart"><ShoppingCartSharpIcon /></span>
-                        <span className="cart_length_round app__text_color" id="cart_count">{cartItems.length}</span>
+                        <span className="cart_length_round" id="cart_count">{cartItems.length}</span>
                     </Link>
 
                     {user ? (
