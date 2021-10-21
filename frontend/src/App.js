@@ -59,25 +59,25 @@ import { loadStripe } from '@stripe/stripe-js'
 
 function App() {
 
-  const [userLocDetails, setUserLocDetails] = useState();
+  // const [userLocDetails, setUserLocDetails] = useState();
   const [stripeApiKey, setStripeApiKey] = useState('');
 
   useEffect(() => {
-    if (JSON.parse(localStorage.getItem("visitingUserLoc"))) {
-      setUserLocDetails(JSON.parse(localStorage.getItem("visitingUserLoc")));
-    } else {
-      const getUserGeoLocationDetails = () => {
-        fetch(
-          "https://geolocation-db.com/json/8f12b5f0-2bc2-11eb-9444-076679b7aeb0"
-        )
-          .then((response) => response.json())
-          .then((data) => {
-            localStorage.setItem("visitingUserLoc", JSON.stringify(data));
-            setUserLocDetails(data);
-          });
-      };
-      getUserGeoLocationDetails();
-    }
+    // if (JSON.parse(localStorage.getItem("visitingUserLoc"))) {
+    //   setUserLocDetails(JSON.parse(localStorage.getItem("visitingUserLoc")));
+    // } else {
+    //   const getUserGeoLocationDetails = () => {
+    //     fetch(
+    //       "https://geolocation-db.com/json/8f12b5f0-2bc2-11eb-9444-076679b7aeb0"
+    //     )
+    //       .then((response) => response.json())
+    //       .then((data) => {
+    //         localStorage.setItem("visitingUserLoc", JSON.stringify(data));
+    //         setUserLocDetails(data);
+    //       });
+    //   };
+    //   getUserGeoLocationDetails();
+    // }
     
     store.dispatch(loadUser());
 
@@ -95,7 +95,8 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Header countryName={userLocDetails?.country_name} />
+      {/* countryName={userLocDetails?.country_name} */}
+        <Header  />
 
         <div className="container container-fluid">
           <Route path="/" component={Home} exact />
