@@ -20,6 +20,8 @@ import { ReactComponent as CogIcon } from '../../icons/cog.svg';
 import { ReactComponent as ChevronIcon } from '../../icons/chevron.svg';
 import { ReactComponent as ArrowIcon } from '../../icons/arrow.svg';
 import { ReactComponent as BoltIcon } from '../../icons/bolt.svg';
+import { ReactComponent as BurgerIcon } from '../../icons/bars-solid.svg';
+
 
 import { CSSTransition } from 'react-transition-group';
 
@@ -60,11 +62,11 @@ function Header() {
                   
                     <div className="logo_location">
                         <div className="navbar-brand">
-                        <Navbar>
-                          <NavItem icon={<CaretIcon />}>
-                            <DropdownMenu></DropdownMenu>
-                          </NavItem>
-                        </Navbar>
+                          <Navbar>
+                            <NavItem icon={<BurgerIcon />}>
+                              <DropdownMenu></DropdownMenu>
+                            </NavItem>
+                          </Navbar>
                         
                             <Link to="/" class='text-decoration-none'>
                                 <img src="../images/shopit_logo2.png" alt="Logo" />
