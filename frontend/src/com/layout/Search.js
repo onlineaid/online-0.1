@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { withRouter } from 'react-router-dom'
 
 function Search({ history }) {
 
@@ -34,4 +35,4 @@ function Search({ history }) {
     )
 }
 
-export default Search
+export default withRouter(Search)

@@ -1,16 +1,14 @@
 import React, {useState,useEffect, useRef} from 'react'; // new line ⚠️ useEffect, useRef
-import { Route, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 // import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
 import ShoppingCartSharpIcon from '@material-ui/icons/ShoppingCartSharp';
 
 import styled, { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme, GlobalStyles } from "./theme";
-
+import Search from './Search';
 import { useDispatch, useSelector } from "react-redux";
 import { useAlert } from 'react-alert';
 import {logout} from '../../actions/userActions'
-
-import Search from './Search';
 
 import { ReactComponent as BellIcon } from '../../icons/bell.svg';
 import { ReactComponent as MessengerIcon } from '../../icons/messenger.svg';
@@ -96,10 +94,10 @@ function Header() {
                 </div>
 
                 <div className="col-12 col-md-6 mt-2 mt-md-0 order-sm-3 col-sm-12 order-md-2">
-                    <Route render={ ({history})=> <Search history={history} />} />
+                    <Search />
                 </div>
 
-                <div className="col-12 col-md-3 mt-md-0 text-center order-sm-2 order-md-3 col-sm-6">
+                <div className="col-md-3 mt-md-0 text-center order-sm-2 order-md-3 col-sm-6">
 
                 
                     {/* <button >btn</button> */}

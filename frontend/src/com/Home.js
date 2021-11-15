@@ -5,6 +5,7 @@ import 'rc-slider/assets/index.css';
 import MetaData from './layout/MetaData';
 import Product from './product/Product';
 import Loader from './layout/Loader';
+import { Link } from 'react-router-dom';
 
 import SliderBanner from "../com/slider/Slider";
 
@@ -78,7 +79,9 @@ function Home({ match }) {
             {loading ? <Loader /> : (
                 <React.Fragment>
                     <MetaData title={'Buy best product online'} />
-                    <SliderBanner />
+
+                    {!keyword ? <SliderBanner /> : <Link to='/' className='btn btn-light'>Go Back</Link>}
+                    {/* <SliderBanner /> */}
 
                     <div className="heading text-center">
                         <h3 id="products_heading" className="mt-5">Latest Products</h3>

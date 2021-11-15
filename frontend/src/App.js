@@ -1,10 +1,9 @@
-import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route,} from "react-router-dom";
-import './App.css';
+import { useEffect, useState } from "react";
 import Header from "./com/layout/Header";
 import Footer from "./com/layout/Footer";
 import Home from "./com/Home";
-
+import './App.css';
 
 // cart import 
 import Cart from "./com/cart/Cart";
@@ -19,8 +18,6 @@ import OrderDetails from "./com/order/OrderDetails";
 
 // product import 
 import ProductDetails from "./com/product/ProductDetails";
-
-// import TermsCondition from "./com/policy/TermsCondition";
 
 // user import
 import Login from "./com/user/Login";
@@ -51,11 +48,9 @@ import { useSelector } from 'react-redux'
 import store from './store';
 import axios from "axios";
 
-
 // Payment
 import { Elements } from '@stripe/react-stripe-js'
 import { loadStripe } from '@stripe/stripe-js'
-
 
 function App() {
 
@@ -95,9 +90,10 @@ function App() {
   return (
     <Router>
       <div className="App">
-      {/* countryName={userLocDetails?.country_name} */}
-        <Header  />
 
+      {/* countryName={userLocDetails?.country_name} */}
+
+        <Header  />
         <div className="container container-fluid">
           <Route path="/" component={Home} exact />
           <Route path="/search/:keyword" component={Home}  />
@@ -124,28 +120,25 @@ function App() {
 
           <ProtectedRoutes path="/orders/me" component={OrderList} exact />
           <ProtectedRoutes path="/order/:id" component={OrderDetails} exact />
-
         </div>
 
-          {/* deshboard  */}
-          <ProtectedRoutes path="/dashboard" isAdmin={true} component={Dashboard} exact />
-          <ProtectedRoutes path="/admin/products" isAdmin={true} component={ProductList} exact />
-          <ProtectedRoutes path="/admin/product" isAdmin={true} component={CreateProduct} exact />
-          <ProtectedRoutes path="/admin/product/:id" isAdmin={true} component={UpdateProduct} exact />
-          <ProtectedRoutes path="/admin/orders" isAdmin={true} component={OrdersListAdmin} exact />
-          <ProtectedRoutes path="/admin/order/:id" isAdmin={true} component={ProcessOrder} exact />
-          <ProtectedRoutes path="/admin/users" isAdmin={true} component={UsersList} exact />
-          <ProtectedRoutes path="/admin/user/:id" isAdmin={true} component={UpdateUser} exact />
-          <ProtectedRoutes path="/admin/reviews" isAdmin={true} component={ProductReviews} exact />
-          <ProtectedRoutes path="/admin/sliders" isAdmin={true} component={SliderList} exact />
-          <ProtectedRoutes path="/admin/slider" isAdmin={true} component={CreateSlider} exact />
-          {/* <ProtectedRoutes path="/admin/slider/:id" isAdmin={true} component={UpdateSlider} exact /> */}
-
-
-          {!loading && (!isAuthenticated || user.role !== 'admin') && (
-            <Footer />
-          )} 
-          {/* <Footer /> */}
+        {/* deshboard  */}
+        <ProtectedRoutes path="/dashboard" isAdmin={true} component={Dashboard} exact />
+        <ProtectedRoutes path="/admin/products" isAdmin={true} component={ProductList} exact />
+        <ProtectedRoutes path="/admin/product" isAdmin={true} component={CreateProduct} exact />
+        <ProtectedRoutes path="/admin/product/:id" isAdmin={true} component={UpdateProduct} exact />
+        <ProtectedRoutes path="/admin/orders" isAdmin={true} component={OrdersListAdmin} exact />
+        <ProtectedRoutes path="/admin/order/:id" isAdmin={true} component={ProcessOrder} exact />
+        <ProtectedRoutes path="/admin/users" isAdmin={true} component={UsersList} exact />
+        <ProtectedRoutes path="/admin/user/:id" isAdmin={true} component={UpdateUser} exact />
+        <ProtectedRoutes path="/admin/reviews" isAdmin={true} component={ProductReviews} exact />
+        <ProtectedRoutes path="/admin/sliders" isAdmin={true} component={SliderList} exact />
+        <ProtectedRoutes path="/admin/slider" isAdmin={true} component={CreateSlider} exact />
+        {/* <ProtectedRoutes path="/admin/slider/:id" isAdmin={true} component={UpdateSlider} exact /> */}
+        {!loading && (!isAuthenticated || user.role !== 'admin') && (
+          <Footer />
+        )} 
+        {/* <Footer /> */}
       </div>
     </Router>
   );
