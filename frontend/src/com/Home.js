@@ -113,8 +113,8 @@ function Home({ match }) {
 
                                             <hr className="my-5" />
 
-                                            <div className="mt-5">
-                                                <h4 className="mb-3">
+                                            <div>
+                                                <h4 className="text-dark">
                                                     Categories 
                                                 </h4>
                                                 <ul className="category_name">
@@ -133,7 +133,7 @@ function Home({ match }) {
                                             <hr className="my-5" />
 
                                             <div className="mt-5">
-                                                <h4 className="mb-3">
+                                                <h4 className="text-dark">
                                                     Rating
                                                 </h4>
                                                 <ul className="rating list-style-none">

@@ -32,7 +32,7 @@ ul {
   width: calc(var(--nav-size) * 0.8);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 /* Icon Button */
@@ -88,7 +88,7 @@ ul {
   position: absolute;
   top: 58px;
   width: 300px;
-  transform: translateX(45%);
+  transform: translateX(0%);
   background-color: var(--bg);
   border: var(--border);
   border-radius: var(--border-radius);
@@ -246,7 +246,7 @@ nav {
 }
 
 .input-group {
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -998,7 +998,7 @@ address > div{
 address > div > span {
   margin-right: 12px;
 }
-@media (max-width: 570px){
+@media (max-width: 572px){
   .order-sm-1 {
     -ms-flex-order: 1;
     order: 1 !important;
@@ -1016,6 +1016,17 @@ address > div > span {
   .order-sm-3 {
     -ms-flex-order: 3 !important;
     order: 3;
+  }
+  .col-mobile-6{
+    text-align: right !important;
+  }
+  .input-group {
+    width: 100%;
+  } 
+  .col-sm-12 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 }
 

@@ -97,7 +97,7 @@ function Header() {
                     <Search />
                 </div>
 
-                <div className="col-md-3 mt-md-0 text-center order-sm-2 order-md-3 col-sm-6 col-mobile-6">
+                <div className="col-md-3 mt-md-0 text-md-center text-sm-center order-sm-2 order-md-3 col-sm-6 col-mobile-6">
 
                 
                     {/* <button >btn</button> */}
