@@ -8,7 +8,8 @@
   --nav-size: 60px;
   --border: 1px solid #474a4d;
   --border-radius: 8px;
-  --speed: 500ms; 
+  --speed: 500ms;
+  --black: #000;
 }
 
 ul {
@@ -40,7 +41,7 @@ ul {
   --button-size: calc(var(--nav-size) * 0.5);
   width: var(--button-size);
   height: var(--button-size);
-  background-color: #484a4d;
+  background-color: #bbbdc0;
   border-radius: 50%;
   padding: 5px;
   margin: 2px;
@@ -52,7 +53,9 @@ ul {
 }
 
 .icon-button:hover {
-  filter: brightness(1.2);
+  /* filter: brightness(1.2); */
+  color:rgba(0, 0, 0, 0.2);
+  filter: blur(8px)
 }
 
 .icon-button svg { 
@@ -89,13 +92,13 @@ ul {
   top: 58px;
   width: 300px;
   transform: translateX(0%);
-  background-color: var(--bg);
-  border: var(--border);
+  background-color: var(--white);
   border-radius: var(--border-radius);
   padding: 1rem;
   overflow: hidden;
   transition: height var(--speed) ease;
   z-index: 11;
+  box-shadow: 1px 1px 2px 1px #0000005e;
 }
 
 .menu {
@@ -110,7 +113,7 @@ ul {
   transition: background var(--speed);
   padding: 0.5rem;
   font-size: 16px;
-  color: var(--white);
+  color: var(--black);
 }
 
 .menu-item .icon-button {
@@ -123,9 +126,9 @@ ul {
 }
 
 .menu-item:hover {
-  background-color: #525357;
-  color:var(--white);
+  background-color: #e8e8e8a1;
   text-decoration: none;
+  color: var(--black);
 }
 
 h6 {
@@ -255,10 +258,6 @@ nav {
   padding: 10px;
 }
 
-.dark__mood {
-  margin-left: 22px;
-}
-
 /* switch btn  */
 .switch {
   position: relative;
@@ -332,6 +331,10 @@ input:checked + .slider:before {
 }
 .dropdown-menu {
   right: 0;
+  padding: 15px;
+  box-shadow: 1px 1px 2px 1px #0000005e;
+  width: 300px;
+  border: none;
 }
 
 
@@ -552,9 +555,14 @@ input:checked + .slider:before {
   margin: 1.8rem 0rem;
   padding: 0rem 0.7rem;
 }
-
+.cart-item img{
+  width: 100%;
+  object-fit: contain;
+}
 .cart-item a {
   color: grey;
+  text-align: justify;
+  text-justify: inter-word;
 }
 .empty-cart-img {
   width: 300px;
@@ -563,10 +571,13 @@ input:checked + .slider:before {
 
 #delete_cart_item {
   color: red;
-  background: white;
-  padding: 0.3rem 0.5rem;
+  background: rgb(236, 236, 236);
+  padding: 0.3rem 0.5 rem;
   font-size: 1.1rem;
   border: none;
+  justify-content: center;
+  display: flex;
+  font-size: 30px;
 }
 
 #card_item_price {
@@ -1027,6 +1038,13 @@ address > div > span {
     -ms-flex: 0 0 100%;
     flex: 0 0 100%;
     max-width: 100%;
+  }
+  .checkout-progress {
+    flex-direction: column;
+    align-items: center;
+  }
+  .checkout-progress a{
+    margin-bottom: 3px;
   }
 }
 

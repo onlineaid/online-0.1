@@ -74,7 +74,7 @@ const Cart = ({ history }) => {
                                             </div>
 
                                             <div className="col-4 col-lg-3 mt-4 mt-lg-0">
-                                                <div className="stockCounter d-inline">
+                                                <div className="stockCounter d-flex">
 
                                                     {/* Increase And Decrease Quantity ================= */}
 

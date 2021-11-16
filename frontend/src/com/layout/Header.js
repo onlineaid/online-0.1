@@ -55,9 +55,6 @@ function Header() {
         <React.Fragment>
             <nav className="navbar row">
                 <div className="col-12 col-md-3 order-sm-1 col-sm-6 order-md-1 col-mobile-5">
-                  
-               
-                  
                     <div className="logo_location">
                         <div className="navbar-brand">
                           <Navbar>
@@ -125,19 +122,19 @@ function Header() {
                             </Link>
 
 
-                            <div className="dropdown-menu shadow-sm" aria-labelledby="dropDownMenuButton">
+                            <div className="dropdown-menu" aria-labelledby="dropDownMenuButton">
 
                                 {user && user.role === 'admin' && (
                                     // <i className="fa fa-tachometer"></i>
-                                    <Link to="/dashboard" className="dropdown-item">Dashboard</Link>
+                                    <Link to="/dashboard" className="dropdown-item menu-item">Dashboard</Link>
                                 )}
 
-                                <Link to="/orders/me" className="dropdown-item">Orders</Link>
-                                <Link to="/me" className="dropdown-item">Profile</Link>
-                                <Link to="/" className="dropdown-item text-danger" onClick={logoutHandler}>
+                                <Link to="/orders/me" className="dropdown-item menu-item">Orders</Link>
+                                <Link to="/me" className="dropdown-item menu-item">Profile</Link>
+                                <Link to="/" className="dropdown-item text-danger menu-item" onClick={logoutHandler}>
                                     Logout
                                 </Link>
-                                <div className="dark__mood"> Dark Mood
+                                <div className="dark__mood menu-item"> Dark Mood
                                     <label class="switch mb-0">
                                         <input type="checkbox" onClick={() => themeToggler()} />
                                         <span class="slider round"></span>
@@ -219,7 +216,10 @@ function DropdownMenu() {
         unmountOnExit
         onEnter={calcHeight}>
         <div className="menu">
-          <DropdownItem>My Profile</DropdownItem>
+          <DropdownItem>
+            
+            My Profile
+            </DropdownItem>
           <DropdownItem
             leftIcon={<CogIcon />}
             rightIcon={<ChevronIcon />}
