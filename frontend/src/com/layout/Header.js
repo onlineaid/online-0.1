@@ -10,10 +10,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { useAlert } from 'react-alert';
 import {logout} from '../../actions/userActions'
 
-import { ReactComponent as BellIcon } from '../../icons/bell.svg';
-import { ReactComponent as MessengerIcon } from '../../icons/messenger.svg';
-import { ReactComponent as CaretIcon } from '../../icons/caret.svg';
-import { ReactComponent as PlusIcon } from '../../icons/plus.svg';
+// import { ReactComponent as BellIcon } from '../../icons/bell.svg';
+// import { ReactComponent as MessengerIcon } from '../../icons/messenger.svg';
+// import { ReactComponent as CaretIcon } from '../../icons/caret.svg';
+// import { ReactComponent as PlusIcon } from '../../icons/plus.svg';
 import { ReactComponent as CogIcon } from '../../icons/cog.svg';
 import { ReactComponent as ChevronIcon } from '../../icons/chevron.svg';
 import { ReactComponent as ArrowIcon } from '../../icons/arrow.svg';
@@ -54,7 +54,7 @@ function Header() {
         </StyledApp>
         <React.Fragment>
             <nav className="navbar row">
-                <div className="col-12 col-md-3 order-sm-1 col-sm-6 order-md-1">
+                <div className="col-12 col-md-3 order-sm-1 col-sm-6 order-md-1 col-mobile-5">
                   
                
                   
@@ -97,7 +97,7 @@ function Header() {
                     <Search />
                 </div>
 
-                <div className="col-md-3 mt-md-0 text-center order-sm-2 order-md-3 col-sm-6">
+                <div className="col-md-3 mt-md-0 text-center order-sm-2 order-md-3 col-sm-6 col-mobile-6">
 
                 
                     {/* <button >btn</button> */}
