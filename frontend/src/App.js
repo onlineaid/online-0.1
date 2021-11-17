@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Switch, Route,} from "react-router-dom";
+import MessengerCustomerChat from 'react-messenger-customer-chat';
 import { useEffect, useState } from "react";
 import Header from "./com/layout/Header";
 import Footer from "./com/layout/Footer";
@@ -90,6 +91,8 @@ function App() {
   return (
     <Router>
       <div className="App">
+
+      <MessengerCustomerChat pageId="921333778073552" appId="2742828059340684" />
 
       {/* countryName={userLocDetails?.country_name} */}
 

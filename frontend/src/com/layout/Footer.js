@@ -49,7 +49,7 @@ function Footer() {
                                     <span>
                                         <i className='fa fa-envelope'></i>
                                     </span>
-                                        Develope by  <a href="mailto:web@example.com">  💻 OmorFaruk</a> <br />
+                                        Develope by  <a href="mailto:online.aid@outlook.com" style={{textDecoration: 'none', paddingLeft: '10px', fontWeight: 'bold'}}>Online Aid</a> <br />
                                     </div>
                                     <div>
                                     <span>

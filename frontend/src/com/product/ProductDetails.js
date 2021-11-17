@@ -3,6 +3,8 @@ import Loader from '../layout/Loader';
 import MetaData from '../layout/MetaData';
 import {Carousel, CarouselItem} from 'react-bootstrap';
 import ReviewsList from '../review/ReviewsList';
+import { Link } from 'react-router-dom';
+// import RelatedProduct from './RelatedProduct';
 
 import { useAlert } from 'react-alert';
 
@@ -236,9 +238,23 @@ function ProductDetails({match}) {
                     )}  
 
 
-                   
-                    {/* <Product key={product._id} product={product} col={3} /> */}
+                    {/* <RelatedProduct /> */}
                     
+                    <React.Fragment>
+                        <h3 className="text-center py-5">Related Product</h3>
+                        <div className="col-md-3">
+                            <Carousel pasue="hover">
+                                {product.images && product.images.map( image => (
+                                    <CarouselItem  key={image.public_id}>
+                                        <Link to={`/product/${product._id}`} >
+                                            <img className="d-block w-100" src={image.url} alt={product.title} />
+                                        </Link>
+                                    </CarouselItem>
+                                ))}
+                            </Carousel>
+                        </div>
+                    </React.Fragment>
+
 
                 </React.Fragment>
             )}
