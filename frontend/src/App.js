@@ -92,7 +92,7 @@ function App() {
     <Router>
       <div className="App">
 
-      <MessengerCustomerChat pageId="921333778073552" appId="2742828059340684" />
+      <MessengerCustomerChat pageId={process.env.REACT_APP_PI} appId={process.env.REACT_APP_AI} />
 
       {/* countryName={userLocDetails?.country_name} */}
 
