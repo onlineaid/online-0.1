@@ -3,8 +3,7 @@ import Loader from '../layout/Loader';
 import MetaData from '../layout/MetaData';
 import {Carousel, CarouselItem} from 'react-bootstrap';
 import ReviewsList from '../review/ReviewsList';
-import { Link } from 'react-router-dom';
-// import RelatedProduct from './RelatedProduct';
+import Product from '../product/Product'
 
 import { useAlert } from 'react-alert';
 
@@ -15,6 +14,8 @@ import { NEW_REVIEW_RESET } from '../../constants/productConstants'
 
 
 function ProductDetails({match}) {
+
+    const { products } = useSelector(state => state.products);
 
     const [quantity, setQuantity] = useState(1)
     const [rating, setRating] = useState(0);
@@ -127,6 +128,8 @@ function ProductDetails({match}) {
                     <MetaData title={'Product Details'} />
                     
                     <img style={{width: '100%', height: '100px', objectFit: 'contain'}} src="https://www.webfx.com/blog/wp-content/uploads/2019/10/banner-ad-example-online.png" alt="" />
+
+                    
                     <div className="row f-flex justify-content-around">
                         <div className="col-12 col-lg-5 img-fluid" id="product_image">
                             <Carousel pasue="hover">
@@ -239,9 +242,20 @@ function ProductDetails({match}) {
 
 
                     {/* <RelatedProduct /> */}
+
+                   <div className="row">
+                        <div className="col-sm-12">
+                            <h3 className="text-center py-5">Related Product</h3>
+                        </div>
+                        {products && products.map( product => (  
+                            <React.Fragment>
+                                    <Product key={product._id} product={product} col={4} />
+                            </React.Fragment>
+                        ))}
+                   </div>
                     
-                    <React.Fragment>
-                        <h3 className="text-center py-5">Related Product</h3>
+                    {/* <React.Fragment>
+                        
                         <div className="col-md-3">
                             <Carousel pasue="hover">
                                 {product.images && product.images.map( image => (
@@ -253,7 +267,7 @@ function ProductDetails({match}) {
                                 ))}
                             </Carousel>
                         </div>
-                    </React.Fragment>
+                    </React.Fragment> */}
 
 
                 </React.Fragment>

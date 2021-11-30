@@ -14,7 +14,12 @@ const Cart = ({ history }) => {
     const {cartItems} = useSelector(state => state.cart)
 
     const removeCartItemHandler = (id) => {
-        dispatch(removeItemFromCart(id))
+        let warning = 'Are you sure to delete this item ?'
+        if (window.confirm(warning)) {
+            dispatch(removeItemFromCart(id))
+        } else {
+            return 'Product delete';
+        }
     }
 
     const increaseQty = (id, quantity, stock) => {
@@ -43,7 +48,7 @@ const Cart = ({ history }) => {
         <React.Fragment>
             <MetaData title={'Your Cart'} />
             {cartItems.length === 0 ? 
-                <div>
+                <div className="text-left">
                    <h2 className="mt-5">Your Cart is Empty</h2>
                    <img className="empty-cart-img" src="https://m.media-amazon.com/images/G/01/cart/empty/kettle-desaturated._CB445243794_.svg" alt="cart" />
                 </div>

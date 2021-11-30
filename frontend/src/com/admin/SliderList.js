@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import {MDBDataTable} from 'mdbreact';
 
@@ -78,9 +78,9 @@ function SliderList({ history }) {
                 id: slide._id,
                 // name: slide.name,
                 actions: <React.Fragment>
-                        {/* <Link to={`/admin/slider/${slide._id}`} className="btn btn-primary py-1 px-2">
+                        <Link to={`/admin/slider/${slide._id}`} className="btn btn-primary py-1 px-2">
                             <i className="fa fa-pencil"></i>
-                        </Link> */}
+                        </Link>
                         <button 
                         className="btn btn-danger py-1 px-2 ml-2" onClick={ () => deleteSeliderHandler(slide._id)}>
                             <i className="fa fa-trash"></i>
@@ -93,7 +93,13 @@ function SliderList({ history }) {
     }
 
     const deleteSeliderHandler = (id) => {
-        dispatch(deleteSlider(id))
+        
+        let warning = 'Be carefull !! you slider will be lost'
+        if (window.confirm(warning)) {
+             dispatch(deleteSlider(id))
+        } else {
+            return 'Product delete';
+        }
     }
 
     return (

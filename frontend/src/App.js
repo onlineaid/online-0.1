@@ -137,7 +137,7 @@ function App() {
         <ProtectedRoutes path="/admin/reviews" isAdmin={true} component={ProductReviews} exact />
         <ProtectedRoutes path="/admin/sliders" isAdmin={true} component={SliderList} exact />
         <ProtectedRoutes path="/admin/slider" isAdmin={true} component={CreateSlider} exact />
-        {/* <ProtectedRoutes path="/admin/slider/:id" isAdmin={true} component={UpdateSlider} exact /> */}
+        {/* <ProtectedRoutes path="/admin/slider/:id" isAdmin={true} component={UpdateSlider} exact/> */}
         {!loading && (!isAuthenticated || user.role !== 'admin') && (
           <Footer />
         )} 

@@ -97,7 +97,12 @@ function ProductList({ history }) {
     }
 
     const deleteProductHandler = (id) => {
-        dispatch(deleteProduct(id))
+        let warning = 'Are you sure to delete this item ?'
+        if (window.confirm(warning)) {
+            dispatch(deleteProduct(id))
+        } else {
+            return 'Product delete';
+        }
     }
 
     return (
