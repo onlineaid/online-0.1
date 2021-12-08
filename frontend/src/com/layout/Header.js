@@ -214,9 +214,13 @@ function DropdownMenu() {
         unmountOnExit
         onEnter={calcHeight}>
         <div className="menu">
-          <DropdownItem>
-            
-            My Profile
+          <DropdownItem>             
+              {/* <img 
+                  src={user.avatar && user.avatar.url } 
+                  alt={user && user.name}
+                  className='rounded-circle'
+              /> */}
+              My Profile
             </DropdownItem>
           <DropdownItem
             leftIcon={<CogIcon />}
