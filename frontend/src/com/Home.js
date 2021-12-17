@@ -80,8 +80,63 @@ function Home({ match }) {
                 <React.Fragment>
                     <MetaData title={'Buy best product online'} />
 
-                    {!keyword ? <SliderBanner /> : <Link to='/' className='btn btn-light'>Go Back</Link>}
-                    {/* <SliderBanner /> */}
+                    {!keyword ?
+                            <SliderBanner />
+                    : <Link to='/' className='btn btn-light'>Go Back</Link>}
+
+                   
+                    <div className="user-info shadow custom-radius">
+                        <div className="row mt-5">
+                            <div className="col-md-3">
+                                <div className="free-shipping">
+                                <div>
+                                     <i class="fa fa-truck" aria-hidden="true"></i>
+                                </div>
+                                <div className="div">
+                                    <h6>FREE SHIPPING & RETURN</h6>
+                                    <p>Free shipping on all order over $99.</p>
+                                </div>
+                                </div>
+                            </div>
+                            <div className="col-md-3">
+                                
+                            <div className="free-shipping">
+                                <div>
+                                    <i class="fa fa-usd" aria-hidden="true"></i>
+                                </div>
+                                    <div className="div">
+                                        <h6>MONEY BACK GUARANTEE</h6>
+                                        <p>100% money back guarantee</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="col-md-3">
+                                <div className="free-shipping">
+                                    <div>
+                                        <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                    </div>
+                                    <div className="div">
+                                        <h6>ONLINE SUPPORT 14/7</h6>
+                                        <p>Support on time just contact us</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div className="col-md-3">
+                                <div className="free-shipping">
+                                    <div className="div">
+                                        <i class="fa fa-credit-card" aria-hidden="true"></i>
+                                    </div>
+                                    <div className="div">
+                                        <h6>SECURE PAYMENT</h6>
+                                        <p>Money refund policy</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
 
                     <div className="heading text-center">
                         <h3 id="products_heading" className="mt-5">Latest Products</h3>
@@ -93,7 +148,7 @@ function Home({ match }) {
                             {keyword ? (
                                 <React.Fragment>
                                     <div className="col-6 col-md-3 my-5 col-sm-12">
-                                        <div className="px-5">
+                                        <div className="px-2">
                                             <Range 
                                                 marks={{
                                                     1 : `$1`,

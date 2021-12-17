@@ -64,7 +64,7 @@ function Header() {
                           </Navbar>
                         
                             <Link to="/" class='text-decoration-none'>
-                                <img src="../images/shopit_logo2.png" alt="Logo" />
+                                <img src="https://hakunamatata.coffee/wp-content/uploads/2021/04/logo-removebg-preview.png" alt="Logo" />
                             </Link>
                         </div>
                         {/* <Navbar>
@@ -101,7 +101,7 @@ function Header() {
 
                     <Link to="/cart" className='cart_link'>
                         <span id="cart" className="ml-3 cart"><ShoppingCartSharpIcon /></span>
-                        <span className="cart_length_round" id="cart_count">{cartItems.length}</span>
+                        <span className="cart_length_round badge-danger" id="cart_count">{cartItems.length}</span>
                     </Link>
 
                     {user ? (
