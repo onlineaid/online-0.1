@@ -253,3 +253,10 @@ exports.deleteReview = catchAsyncErrors(async (req, res, next) => {
         success: true
     })
 })
+
+// Get top rating product  => api/v1/topproduct
+exports.getTopProducts = catchAsyncErrors(async(req, res) => {
+    const products = await Product.find({}).sort({ rating: -1 }).limit(4)
+
+    res.json(products)
+})

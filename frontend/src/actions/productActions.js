@@ -33,6 +33,9 @@ import {
     DELETE_REVIEW_SUCCESS,
     // DELETE_REVIEW_RESET,
     DELETE_REVIEW_FAIL,
+    PRODUCT_TOP_REQUEST,
+    PRODUCT_TOP_SUCCESS,
+    PRODUCT_TOP_FAIL,
     CLEAR_ERRORS
 } from "../constants/productConstants";
 
@@ -255,6 +258,24 @@ export const deleteReview = (id, productId) => async (dispatch) => {
             type: DELETE_REVIEW_FAIL,
             payload: error.response.data.message
         })
+    }
+}
+
+export const listTopProducts = () => async (dispatch) => {
+    try {
+        dispatch({ type: PRODUCT_TOP_REQUEST })
+
+        const { data } = await axios.get(`/api/v1/products/top`)
+
+        dispatch({ 
+            type: PRODUCT_TOP_SUCCESS,
+            payload: data 
+        })
+    } catch (error) {
+        dispatch({ 
+            type: PRODUCT_TOP_FAIL,
+            payload: error.response.data.message
+         })
     }
 }
 

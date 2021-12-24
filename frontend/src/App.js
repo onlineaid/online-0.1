@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Switch, Route,} from "react-router-dom";
+import { BrowserRouter as Router, Route,} from "react-router-dom";
 import MessengerCustomerChat from 'react-messenger-customer-chat';
 import { useEffect, useState } from "react";
 import Header from "./com/layout/Header";
@@ -28,6 +28,8 @@ import UpdateProfile from "./com/user/UpdateProfile";
 import UpdatePassword from "./com/user/UpdatePassword";
 import ForgotPassword from "./com/user/ForgotPassword";
 import ResetPassword from "./com/user/ResetPassword";
+import TermsCondition from "./com/policy/TermsCondition";
+import Trems from "./com/terms/Trems";
 
 // admin import 
 import Dashboard from "./com/admin/Dashboard";
@@ -55,25 +57,9 @@ import { loadStripe } from '@stripe/stripe-js'
 
 function App() {
 
-  // const [userLocDetails, setUserLocDetails] = useState();
   const [stripeApiKey, setStripeApiKey] = useState('');
 
   useEffect(() => {
-    // if (JSON.parse(localStorage.getItem("visitingUserLoc"))) {
-    //   setUserLocDetails(JSON.parse(localStorage.getItem("visitingUserLoc")));
-    // } else {
-    //   const getUserGeoLocationDetails = () => {
-    //     fetch(
-    //       "https://geolocation-db.com/json/8f12b5f0-2bc2-11eb-9444-076679b7aeb0"
-    //     )
-    //       .then((response) => response.json())
-    //       .then((data) => {
-    //         localStorage.setItem("visitingUserLoc", JSON.stringify(data));
-    //         setUserLocDetails(data);
-    //       });
-    //   };
-    //   getUserGeoLocationDetails();
-    // }
     
     store.dispatch(loadUser());
 
@@ -93,8 +79,6 @@ function App() {
       <div className="App">
 
       <MessengerCustomerChat pageId={process.env.REACT_APP_PI} appId={process.env.REACT_APP_AI} />
-
-      {/* countryName={userLocDetails?.country_name} */}
 
         <Header  />
         <div className="container container-fluid">
@@ -123,6 +107,8 @@ function App() {
 
           <ProtectedRoutes path="/orders/me" component={OrderList} exact />
           <ProtectedRoutes path="/order/:id" component={OrderDetails} exact />
+          <Route path='/terms' component={TermsCondition} />
+          <Route path='/policy' component={Trems} />
         </div>
 
         {/* deshboard  */}

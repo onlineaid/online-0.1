@@ -239,37 +239,6 @@ function ProductDetails({match}) {
                     {product.reviews && product.reviews.length > 0 && (
                         <ReviewsList reviews={product.reviews} />
                     )}  
-
-
-                    {/* <RelatedProduct /> */}
-
-                   <div className="row">
-                        <div className="col-sm-12">
-                            <h3 className="text-center py-5">Related Product</h3>
-                        </div>
-                        {products && products.map( product => (  
-                            <React.Fragment>
-                                    <Product key={product._id} product={product} col={4} />
-                            </React.Fragment>
-                        ))}
-                   </div>
-                    
-                    {/* <React.Fragment>
-                        
-                        <div className="col-md-3">
-                            <Carousel pasue="hover">
-                                {product.images && product.images.map( image => (
-                                    <CarouselItem  key={image.public_id}>
-                                        <Link to={`/product/${product._id}`} >
-                                            <img className="d-block w-100" src={image.url} alt={product.title} />
-                                        </Link>
-                                    </CarouselItem>
-                                ))}
-                            </Carousel>
-                        </div>
-                    </React.Fragment> */}
-
-
                 </React.Fragment>
             )}
         </React.Fragment>

@@ -8,7 +8,8 @@ import {
     productDeleteReducer,
     newProductReducer,
     productReviwsReducer,
-    reviewReducer
+    reviewReducer,
+    productTopRatedReducer
 } from "./reducers/productReducers";
 
 import { sliderReducer, createSliderReducer, deleteSliderReducer } from './reducers/sliderReducer'
@@ -30,14 +31,19 @@ import {
 } from './reducers/orderReducers';
 
 const reducer = combineReducers({
+    
     products : productsReducer,
     createProduct: newProductReducer,
-    slider: sliderReducer,
-    createSlider: createSliderReducer,
-    deleteSlider: deleteSliderReducer,
     productReviews: productReviwsReducer,
     productDelete: productDeleteReducer,
     getProductDetails : productDetailsReducer,
+    productTopRated: productTopRatedReducer,
+
+    
+    slider: sliderReducer,
+    createSlider: createSliderReducer,
+    deleteSlider: deleteSliderReducer,
+
     auth: authReducer,
     user: userReducer,
     forgotPassword : forgotPasswordReducer,

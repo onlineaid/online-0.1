@@ -55,21 +55,6 @@ function SliderBanner() {
                     </Carousel>
                 ))}
             </section>
-            
-
-            {/* <Carousel pasue="hover">
-                {product.images && product.images.map( image => (
-                    key={image.public_id}
-                    <CarouselItem style={sliderStyle}>
-                    <img className="w-100" src="https://soliloquywp.com/wp-content/uploads/2018/11/nb_ist_cover.jpg" alt="" />
-                    </CarouselItem>
-                    <CarouselItem style={sliderStyle}>
-                    <img className="w-100" src="https://image.freepik.com/free-vector/3d-online-shopping-social-media-mobile-applications-websites-concepts_131114-30.jpg" alt="" />
-                    </CarouselItem>
-
-                    
-                ))}
-            </Carousel> */}
         </React.Fragment>
     )
 }

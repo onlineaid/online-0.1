@@ -1,6 +1,5 @@
-import React, {useState,useEffect, useRef} from 'react'; // new line ⚠️ useEffect, useRef
+import React, {useState,useEffect, useRef} from 'react';
 import { Link } from 'react-router-dom'
-// import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
 import ShoppingCartSharpIcon from '@material-ui/icons/ShoppingCartSharp';
 
 import styled, { ThemeProvider } from "styled-components";
@@ -56,37 +55,11 @@ function Header() {
             <nav className="navbar row">
                 <div className="col-12 col-md-3 order-sm-1 col-sm-6 order-md-1 col-mobile-5">
                     <div className="logo_location">
-                        <div className="navbar-brand">
-                          <Navbar>
-                            <NavItem icon={<BurgerIcon />}>
-                              <DropdownMenu></DropdownMenu>
-                            </NavItem>
-                          </Navbar>
-                        
+                        <div className="navbar-brand">                        
                             <Link to="/" class='text-decoration-none'>
                                 <img src="https://hakunamatata.coffee/wp-content/uploads/2021/04/logo-removebg-preview.png" alt="Logo" />
                             </Link>
                         </div>
-                        {/* <Navbar>
-                          <NavItem icon={<CaretIcon />}>
-                            <DropdownMenu></DropdownMenu>
-                          </NavItem>
-                        </Navbar>
-                         */}
-                        {/* <div className='user_location'>
-                            {countryName !== "" && (
-                            <div className="header__delivery">
-                                    <LocationOnOutlinedIcon className="location_icon" />
-                                    
-                                
-                                <div className="options d-flex flex-column">
-                                    <span className="headerNav__optionLineOne text-white app__text_color">Deliver to</span>
-                                    <span className="headerNav__optionLineTwo text-white app__text_color">{countryName}</span>
-                                    
-                                </div>
-                            </div>
-                            )}
-                        </div> */}
                     </div>
                 </div>
 
@@ -156,125 +129,6 @@ function Header() {
     </ThemeProvider>
     )
 }
-
-function Navbar(props) {
-  return (
-    <div className="navbar-menu">
-      <ul className="navbar-nav">{props.children}</ul>
-    </div>
-  );
-}
-
-function NavItem(props) {
-  const [open, setOpen] = useState(false);
-
-  return (
-    <li className="nav-item">
-      <Link to="#" className="icon-button" onClick={() => setOpen(!open)}>
-        {props.icon}
-      </Link>
-
-      {open && props.children}
-    </li>
-  );
-}
-
-function DropdownMenu() {
-  const [activeMenu, setActiveMenu] = useState('main');
-  const [menuHeight, setMenuHeight] = useState(null);
-  const dropdownRef = useRef(null);
-
-  useEffect(() => {
-    setMenuHeight(dropdownRef.current?.firstChild.offsetHeight)
-  }, [])
-
-  function calcHeight(el) {
-    const height = el.offsetHeight;
-    setMenuHeight(height);
-  }
-
-  function DropdownItem(props) {
-    return (
-      <Link to="/" className="menu-item" onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}>
-        <span className="icon-button">{props.leftIcon}</span>
-        {props.children}
-        <span className="icon-right">{props.rightIcon}</span>
-      </Link>
-    );
-  }
-
-  return (
-    <div className="dropdown"  ref={dropdownRef}>
-      {/* style={{ height: menuHeight }} */}
-
-      <CSSTransition
-        in={activeMenu === 'main'}
-        timeout={500}
-        classNames="menu-primary"
-        unmountOnExit
-        onEnter={calcHeight}>
-        <div className="menu">
-          <DropdownItem>             
-              {/* <img 
-                  src={user.avatar && user.avatar.url } 
-                  alt={user && user.name}
-                  className='rounded-circle'
-              /> */}
-              My Profile
-            </DropdownItem>
-          <DropdownItem
-            leftIcon={<CogIcon />}
-            rightIcon={<ChevronIcon />}
-            goToMenu="settings">
-            Settings
-          </DropdownItem>
-          <DropdownItem
-            leftIcon="🦧"
-            rightIcon={<ChevronIcon />}
-            goToMenu="animals">
-            Animals
-          </DropdownItem>
-
-        </div>
-      </CSSTransition>
-
-      <CSSTransition
-        in={activeMenu === 'settings'}
-        timeout={500}
-        classNames="menu-secondary"
-        unmountOnExit
-        onEnter={calcHeight}>
-        <div className="menu">
-          <DropdownItem goToMenu="main" leftIcon={<ArrowIcon />}>
-            <h6>My Tutorial</h6>
-          </DropdownItem>
-          <DropdownItem leftIcon={<BoltIcon />}>HTML</DropdownItem>
-          <DropdownItem leftIcon={<BoltIcon />}>CSS</DropdownItem>
-          <DropdownItem leftIcon={<BoltIcon />}>JavaScript</DropdownItem>
-          <DropdownItem leftIcon={<BoltIcon />}>Awesome!</DropdownItem>
-        </div>
-      </CSSTransition>
-
-      <CSSTransition
-        in={activeMenu === 'animals'}
-        timeout={500}
-        classNames="menu-secondary"
-        unmountOnExit
-        onEnter={calcHeight}>
-        <div className="menu">
-          <DropdownItem goToMenu="main" leftIcon={<ArrowIcon />}>
-            <h6>Animals</h6>
-          </DropdownItem>
-          <DropdownItem leftIcon="🦘">Kangaroo</DropdownItem>
-          <DropdownItem leftIcon="🐸">Frog</DropdownItem>
-          <DropdownItem leftIcon="🦋">Horse?</DropdownItem>
-          <DropdownItem leftIcon="🦔">Hedgehog</DropdownItem>
-        </div>
-      </CSSTransition>
-    </div>
-  );
-}
-
 
 
 export default Header

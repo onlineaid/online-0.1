@@ -441,7 +441,6 @@ input:checked + .slider:before {
   padding: 20px 0px;
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 .free-shipping i {
   font-size: 30px;
@@ -460,6 +459,11 @@ input:checked + .slider:before {
 .free-shipping h6{
   font-weight: 600;
   font-size: 15px;
+}
+
+.user-info {
+  display: flex;
+  justify-content: space-between;
 }
 
 
@@ -1047,6 +1051,9 @@ address > div > span {
   margin-right: 12px;
 }
 @media (max-width: 572px){
+  .user-info{
+    flex-direction: column;
+  }
   .d-extra-sm {
     display: none;
   }

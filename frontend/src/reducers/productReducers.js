@@ -31,6 +31,9 @@ import {
     DELETE_REVIEW_SUCCESS,
     DELETE_REVIEW_RESET,
     DELETE_REVIEW_FAIL,
+    PRODUCT_TOP_REQUEST,
+    PRODUCT_TOP_SUCCESS,
+    PRODUCT_TOP_FAIL,
     CLEAR_ERRORS
 } from "../constants/productConstants";
 
@@ -281,7 +284,6 @@ export const productReviwsReducer = (state = {review: [] }, action) => {
     }
 }
 
-
 export const reviewReducer = (state = { products: [] }, action) => {
     switch (action.type) {
 
@@ -322,3 +324,25 @@ export const reviewReducer = (state = { products: [] }, action) => {
             return state;
     }
 };
+
+export const productTopRatedReducer = (state = { products: [] }, action) => {
+    switch (action.type) {
+        case PRODUCT_TOP_REQUEST:
+            return { 
+                loading: true, 
+                products: [] 
+            }
+        case PRODUCT_TOP_SUCCESS:
+            return { 
+                loading: false, 
+                products: action.payload 
+            }
+        case PRODUCT_TOP_FAIL:
+            return { 
+                loading: false, 
+                error: action.payload 
+            }
+        default:
+            return state
+    }
+}

@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import TermsCondition from '../policy/TermsCondition';
 function Footer() {
     const currentYear = new Date().getFullYear();
 
@@ -17,12 +16,11 @@ function Footer() {
                                 <Link to='#'>Affiliate</Link>
                                 <Link to='#'>Specials</Link>
                                 <Link to='#'>Site Map</Link>
-                                {TermsCondition}
                             </div>
                             <div className="col-md-3 ft-link-control">
                                 <h5 className="mb-3">INFORMATION</h5>
                                 <Link to='#'>About Us</Link>
-                                <Link to='#'>Privacy Policy</Link>
+                                <Link to='/policy'>Privacy Policy</Link>
                                 <Link to='#'>Terms & Conditions</Link>
                                 <Link to='#'>Contact Us</Link>
                                 <Link to='#'>Site Map</Link>

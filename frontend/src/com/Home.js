@@ -5,9 +5,10 @@ import 'rc-slider/assets/index.css';
 import MetaData from './layout/MetaData';
 import Product from './product/Product';
 import Loader from './layout/Loader';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 import SliderBanner from "../com/slider/Slider";
+import TopProduct from './slider/TopProduct' 
 
 import { useDispatch, useSelector} from "react-redux";
 import { useAlert } from 'react-alert';
@@ -79,72 +80,26 @@ function Home({ match }) {
             {loading ? <Loader /> : (
                 <React.Fragment>
                     <MetaData title={'Buy best product online'} />
-
-                    {!keyword ?
-                            <SliderBanner />
-                    : <Link to='/' className='btn btn-light'>Go Back</Link>}
-
                    
-                    <div className="user-info shadow custom-radius">
-                        <div className="row mt-5">
-                            <div className="col-md-3">
-                                <div className="free-shipping">
-                                <div>
-                                     <i class="fa fa-truck" aria-hidden="true"></i>
-                                </div>
-                                <div className="div">
-                                    <h6>FREE SHIPPING & RETURN</h6>
-                                    <p>Free shipping on all order over $99.</p>
-                                </div>
-                                </div>
-                            </div>
-                            <div className="col-md-3">
-                                
-                            <div className="free-shipping">
-                                <div>
-                                    <i class="fa fa-usd" aria-hidden="true"></i>
-                                </div>
-                                    <div className="div">
-                                        <h6>MONEY BACK GUARANTEE</h6>
-                                        <p>100% money back guarantee</p>
-                                    </div>
-                                </div>
-                            </div>
+                    
 
-                            <div className="col-md-3">
-                                <div className="free-shipping">
-                                    <div>
-                                        <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                    </div>
-                                    <div className="div">
-                                        <h6>ONLINE SUPPORT 14/7</h6>
-                                        <p>Support on time just contact us</p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div className="col-md-3">
-                                <div className="free-shipping">
-                                    <div className="div">
-                                        <i class="fa fa-credit-card" aria-hidden="true"></i>
-                                    </div>
-                                    <div className="div">
-                                        <h6>SECURE PAYMENT</h6>
-                                        <p>Money refund policy</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
+
+                    {/* <ul className="category_name">
+                                {categories.map( category => (
+                                    <li 
+                                        key={category}
+                                        onClick={ ()=> setCategory(category)}
+                                    >
+                                        {category}
+                                    </li>
+                                ))}
+                            </ul> */}
                    
 
-                    <div className="heading text-center">
-                        <h3 id="products_heading" className="mt-5">Latest Products</h3>
-                        <p>Select from the premium product brands and save plenty money</p>
-                    </div>
+                    
                     <section id="products" className="container">
                         <div className="row">
-
                             {keyword ? (
                                 <React.Fragment>
                                     <div className="col-6 col-md-3 my-5 col-sm-12">
@@ -218,12 +173,77 @@ function Home({ match }) {
                                         </div>
                                     </div>
                                 </React.Fragment>
-                            ) : (
-                                
-                                products && products.map( product => (  
-                                    <Product key={product._id} product={product} col={3} />
-                                ))
-                            )}
+                            ) :
+                                <React.Fragment>
+
+                                    <div className="col-md-12">
+                                        <SliderBanner />
+                                    </div>
+
+                                    <div className="col-md-12 mt-5 py-3">
+                                        
+                                        <div className='shadow user-info custom-radius p-3'>
+                                        <div className="free-shipping">
+                                            <div>
+                                                <i class="fa fa-truck" aria-hidden="true"></i>
+                                            </div>
+                                            <div className="div">
+                                                <h6>FREE SHIPPING & RETURN</h6>
+                                                <p>Free shipping on all order over $99.</p>
+                                            </div>
+                                        </div>
+                                        <div className="free-shipping">
+                                            <div>
+                                                <i class="fa fa-usd" aria-hidden="true"></i>
+                                            </div>
+                                                <div className="div">
+                                                    <h6>MONEY BACK GUARANTEE</h6>
+                                                    <p>100% money back guarantee</p>
+                                                </div>
+                                            </div>
+                                            
+                                            <div className="free-shipping">
+                                                <div>
+                                                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                                </div>
+                                                <div className="div">
+                                                    <h6>ONLINE SUPPORT 14/7</h6>
+                                                    <p>Support on time just contact us</p>
+                                                </div>
+                                            </div>
+                                            
+                                            <div className="free-shipping">
+                                                <div className="div">
+                                                    <i class="fa fa-credit-card" aria-hidden="true"></i>
+                                                </div>
+                                                <div className="div">
+                                                    <h6>SECURE PAYMENT</h6>
+                                                    <p>Money refund policy</p>
+                                                </div>
+                                                </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div className="col-md-12">
+                                        <div className="heading text-center">
+                                        <h3 id="products_heading" className="mt-5">Top Products</h3>
+                                        <p>Select from the premium product brands and save plenty money</p>
+                                    </div>
+                                    </div>
+                                    <TopProduct />
+                                    
+                                    <div className="col-md-12 my-3">
+                                        <div className="heading text-center">
+                                            <h3 id="products_heading" className="mt-5">Feature Products</h3>
+                                            <p>Select from the premium product brands and save plenty money</p>
+                                        </div>
+                                    </div>
+                                    {products && products.map( product => (  
+                                        <Product key={product._id} product={product} col={3} />
+                                    ))}
+                                </React.Fragment>
+                            }
+
                         </div>
                     </section>
 
