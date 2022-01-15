@@ -3,7 +3,7 @@ import Loader from '../layout/Loader';
 import MetaData from '../layout/MetaData';
 import {Carousel, CarouselItem} from 'react-bootstrap';
 import ReviewsList from '../review/ReviewsList';
-import Product from '../product/Product'
+// import Product from '../product/Product'
 
 import { useAlert } from 'react-alert';
 
@@ -15,7 +15,7 @@ import { NEW_REVIEW_RESET } from '../../constants/productConstants'
 
 function ProductDetails({match}) {
 
-    const { products } = useSelector(state => state.products);
+    // const { products } = useSelector(state => state.products);
 
     const [quantity, setQuantity] = useState(1)
     const [rating, setRating] = useState(0);

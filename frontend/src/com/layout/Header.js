@@ -57,7 +57,7 @@ function Header() {
                     <div className="logo_location">
                         <div className="navbar-brand">                        
                             <Link to="/" class='text-decoration-none'>
-                                <img src="https://hakunamatata.coffee/wp-content/uploads/2021/04/logo-removebg-preview.png" alt="Logo" />
+                                <img src="../images/shopit_logo2.png" alt="Logo" />
                             </Link>
                         </div>
                     </div>
