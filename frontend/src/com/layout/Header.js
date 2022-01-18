@@ -8,6 +8,7 @@ import Search from './Search';
 import { useDispatch, useSelector } from "react-redux";
 import { useAlert } from 'react-alert';
 import {logout} from '../../actions/userActions'
+import Nav from './nav-ui/Nav';
 
 // import { ReactComponent as BellIcon } from '../../icons/bell.svg';
 // import { ReactComponent as MessengerIcon } from '../../icons/messenger.svg';
@@ -55,7 +56,8 @@ function Header() {
             <nav className="navbar row">
                 <div className="col-12 col-md-3 order-sm-1 col-sm-6 order-md-1 col-mobile-5">
                     <div className="logo_location">
-                        <div className="navbar-brand">                        
+                        <div className="navbar-brand">   
+                        <Nav />                     
                             <Link to="/" class='text-decoration-none'>
                                 <img src="../images/shopit_logo2.png" alt="Logo" />
                             </Link>

@@ -12,6 +12,131 @@
   --black: #000;
 }
 
+
+/* nav{
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} */
+
+/* .navigation .drop-btn {
+  width: 400px;
+  background: #242526;
+  border-radius: 5px;
+  line-height: 55px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #b0b3b8;
+  padding: 0 15px;
+  padding: 10px;
+} */
+.navigation .drop-btn:hover{
+  background: #ccc;
+  border-radius: 50%;
+}
+.navigation .drop-btn button:focus{
+  border: none;
+  outline: none;
+}
+.navigation .drop-btn span{
+  float: right;
+  line-height: 50px;
+  font-size: 28px;
+  cursor: pointer;
+}
+/* nav .tooltip{
+  position: absolute;
+  right: 20px;
+  bottom: -20px;
+  height: 15px;
+  width: 15px;
+  background: #242526;;
+  transform: rotate(45deg);
+  display: none;
+} */
+/* nav .tooltip.show{
+  display: block;
+} */
+.navigation .wrapper{
+  position: absolute;
+  top: -12px;
+  display: flex;
+  width: 332px;
+  overflow: hidden;
+  border-radius: 5px;
+  background: #242526b4;
+  backdrop-filter: blur(20px);
+  display: none;
+  transition: all 0.3s ease;
+  z-index: 111;
+}
+.navigation .wrapper.show{
+  display: block;
+  display: flex;
+}
+.wrapper ul{
+  width: 332px;
+  list-style: none;
+  padding: 10px;
+  transition: all 0.3s ease;
+  margin-bottom: 0px;
+}
+.wrapper ul li{
+  line-height: 55px;
+}
+.wrapper ul li a{
+  position: relative;
+  color: #b0b3b8;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 0 10px;
+  display: flex;
+  border-radius: 8px;
+  align-items: center;
+  text-decoration: none;
+}
+.wrapper ul li:hover a{
+  background: #3A3B3C;
+}
+ul li a .icon{
+  height: 40px;
+  width: 40px;
+  margin-right: 13px;
+  background: #ffffff1a;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  border-radius: 50%;
+  align-items: center;
+  color: #fff;
+}
+ul li a .icon span{
+  line-height: 40px;
+  font-size: 20px;
+  color: #b0b3b8;
+}
+ul li a i{
+  position: absolute;
+  right: 10px;
+  font-size: 25px;
+  pointer-events: none;
+}
+.wrapper ul.setting-drop,
+.wrapper ul.help-drop{
+  display: none;
+}
+.wrapper .arrow{
+  padding-left: 10px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #b0b3b8;
+  cursor: pointer;
+}
+.wrapper .arrow span{
+  margin-right: 15px;
+}
+
 .custom-radius {
   border-radius: var(--border-radius);
 }

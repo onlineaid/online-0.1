@@ -106,7 +106,6 @@ export const authReducer = (state = { user: [] }, action) => {
     }
 }
 
-
 export const userReducer = (state ={},  action) => {
     switch (action.type) {
         case UPDATE_PROFILE_REQUEST:
@@ -169,7 +168,6 @@ export const userReducer = (state ={},  action) => {
             return state;
     }
 }
-
 
 export const forgotPasswordReducer = (state ={ },  action) => {
     switch (action.type) {
@@ -248,7 +246,7 @@ export const allUsersReducer = (state ={ users: [] },  action) => {
 }
 
 // all user details get by admin 
-export const userDetailsReducer = (state ={ user: {} },  action) => {
+export const userDetailsReducer = (state = { user: {} },  action) => {
     switch (action.type) {
         case USER_DETAILS_REQUEST:
             return{
