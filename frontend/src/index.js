@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import 'rsuite/dist/rsuite.min.css'
+// import 'rsuite/dist/rsuite.min.css'
 
 // Redux implimentation 
 import { Provider } from "react-redux";
