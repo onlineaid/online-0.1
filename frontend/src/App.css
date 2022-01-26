@@ -30,10 +30,10 @@
   position: absolute;
   top: -12px;
   display: flex;
-  width: 332px;
+  width: 400px;
   overflow: hidden;
   border-radius: 5px;
-  background: #242526b4;
+  background: #000000;
   backdrop-filter: blur(20px);
   display: none;
   transition: all 0.3s ease;
@@ -44,7 +44,7 @@
   display: flex;
 }
 .wrapper ul{
-  width: 332px;
+  width: 400px;
   list-style: none;
   padding: 10px;
   transition: all 0.3s ease;
@@ -91,6 +91,9 @@ ul li a i{
   pointer-events: none;
 }
 .wrapper ul.setting-drop,
+.wrapper ul.ele-drop,
+.wrapper ul.beauty-drop,
+.wrapper ul.personal-drop,
 .wrapper ul.help-drop{
   display: none;
 }
