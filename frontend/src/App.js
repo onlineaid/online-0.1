@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route,} from "react-router-dom";
-import MessengerCustomerChat from 'react-messenger-customer-chat';
+// import MessengerCustomerChat from 'react-messenger-customer-chat';
 import { useEffect, useState } from "react";
 import Header from "./com/layout/Header";
 import Footer from "./com/layout/Footer";
@@ -78,7 +78,7 @@ function App() {
     <Router>
       <div className="App">
 
-      <MessengerCustomerChat pageId={process.env.REACT_APP_PI} appId={process.env.REACT_APP_AI} />
+      {/* <MessengerCustomerChat pageId={process.env.REACT_APP_PI} appId={process.env.REACT_APP_AI} /> */}
 
         <Header  />
         <div className="container container-fluid">

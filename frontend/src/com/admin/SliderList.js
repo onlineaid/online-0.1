@@ -10,7 +10,7 @@ import MetaData from '../layout/MetaData';
 import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
 import { getAdminSlider, deleteSlider, clearErrors} from '../../actions/sliderActions';
-import { DELETE_SLIDER_RESET } from '../../constants/sliderConstants'
+import { DELETE_SLIDER_RESET } from '../../redux/constants/sliderConstants'
 
 function SliderList({ history }) {
 

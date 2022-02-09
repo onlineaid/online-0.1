@@ -8,7 +8,7 @@ import Loader from './layout/Loader';
 // import { Link } from 'react-router-dom';
 
 import SliderBanner from "../com/slider/Slider";
-import TopProduct from './slider/TopProduct' 
+import TopProduct from './product/TopProduct' 
 
 import { useDispatch, useSelector} from "react-redux";
 import { useAlert } from 'react-alert';
@@ -231,6 +231,18 @@ function Home({ match }) {
                                     </div>
                                     </div>
                                     <TopProduct />
+
+                                    <div className="col-md-12 my-3">
+                                        <div className="heading text-center">
+                                            <h3 id="products_heading" className="mt-5">Category Products</h3>
+                                            <p>Select from the premium product brands and save plenty money</p>
+                                        </div>
+                                    </div>
+                                    {products && products.filter( product =>  product.category === "Electronics")
+                                        .map(product => (
+                                            <Product key={product._id} product={product} col={3} />
+                                        ))
+                                    }
                                     
                                     <div className="col-md-12 my-3">
                                         <div className="heading text-center">

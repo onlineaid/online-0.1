@@ -84,11 +84,14 @@ ul li a .icon span{
   font-size: 20px;
   color: #b0b3b8;
 }
-ul li a i{
+.wrapper ul li a i{
   position: absolute;
   right: 10px;
   font-size: 25px;
   pointer-events: none;
+}
+ul li a i{
+  padding: 3px;
 }
 .wrapper ul.setting-drop,
 .wrapper ul.ele-drop,

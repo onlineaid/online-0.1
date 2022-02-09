@@ -175,7 +175,7 @@ function Nav() {
             </li>
          </ul>
 
-         <ul className="setting-drop">
+         <ul className="setting-drop ">
             <li className="arrow back-setting-btn" onClick={setting_btn}>
                <ArrowBackIcon />Back
             </li>
@@ -203,6 +203,15 @@ function Nav() {
                   Boys
                </Link>
             </li>
+            <li>
+               <Link to="#">
+                  <div className="icon">
+                  <FaceIcon />
+                  </div>
+                  Girls
+               </Link>
+            </li>
+            
             <li>
                <Link to="#">
                   <div className="icon">

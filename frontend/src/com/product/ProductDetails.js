@@ -3,6 +3,7 @@ import Loader from '../layout/Loader';
 import MetaData from '../layout/MetaData';
 import {Carousel, CarouselItem} from 'react-bootstrap';
 import ReviewsList from '../review/ReviewsList';
+// import RelatedProduct from './RelatedProduct';
 // import Product from '../product/Product'
 
 import { useAlert } from 'react-alert';
@@ -239,6 +240,8 @@ function ProductDetails({match}) {
                     {product.reviews && product.reviews.length > 0 && (
                         <ReviewsList reviews={product.reviews} />
                     )}  
+
+                    {/* <RelatedProduct /> */}
                 </React.Fragment>
             )}
         </React.Fragment>
