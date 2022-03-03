@@ -15,11 +15,16 @@ function RelatedProduct() {
 
     useEffect(() => {
 
-        console.log(dispatch(getProducts()))
+        if(error) {
+            alert.success("Done")
+            return alert.error(error);
+        }
 
-        // dispatch(getProducts())
+        // console.log(dispatch(getProducts()))
 
-    }, [dispatch]);
+        dispatch(getProducts())
+
+    }, [dispatch, error]);
 
 
   return (

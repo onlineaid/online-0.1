@@ -3,20 +3,18 @@ import Loader from '../layout/Loader';
 import MetaData from '../layout/MetaData';
 import {Carousel, CarouselItem} from 'react-bootstrap';
 import ReviewsList from '../review/ReviewsList';
-// import RelatedProduct from './RelatedProduct';
-// import Product from '../product/Product'
+import RelatedProduct from './RelatedProduct';
 
 import { useAlert } from 'react-alert';
 
 import { useDispatch, useSelector } from "react-redux";
 import { getProductDetails, newReview, clearErrors } from '../../actions/productActions';
+
 import { addItemToCart } from '../../actions/cartActions';
 import { NEW_REVIEW_RESET } from '../../constants/productConstants'
 
 
 function ProductDetails({match}) {
-
-    // const { products } = useSelector(state => state.products);
 
     const [quantity, setQuantity] = useState(1)
     const [rating, setRating] = useState(0);
@@ -31,6 +29,8 @@ function ProductDetails({match}) {
 
     useEffect(() => {
         dispatch(getProductDetails(match.params.id))
+        // dispatch(getProducts());
+        // console.log(match)
         
         if (error) {
             alert.error(error);
@@ -122,24 +122,30 @@ function ProductDetails({match}) {
         dispatch(newReview(formData));
     }
 
+
     return (
         <React.Fragment>
             {loading ? <Loader /> : (
                 <React.Fragment>
                     <MetaData title={'Product Details'} />
                     
+                    
                     <img style={{width: '100%', height: '100px', objectFit: 'contain'}} src="https://www.webfx.com/blog/wp-content/uploads/2019/10/banner-ad-example-online.png" alt="" />
 
                     
                     <div className="row f-flex justify-content-around">
                         <div className="col-12 col-lg-5 img-fluid" id="product_image">
+                           
+
                             <Carousel pasue="hover">
-                                {product.images && product.images.map( image => (
-                                    <CarouselItem  key={image.public_id}>
+                                {product.images && product.images.map( (image, index) => (
+                                    <CarouselItem  key={index}>
                                         <img className="d-block w-100" src={image.url} alt={product.title} />
                                     </CarouselItem>
                                 ))}
                             </Carousel>
+                                    
+                                   
                         </div>
 
                         <div className="col-12 col-lg-5 mt-5">
@@ -241,7 +247,8 @@ function ProductDetails({match}) {
                         <ReviewsList reviews={product.reviews} />
                     )}  
 
-                    {/* <RelatedProduct /> */}
+                    <RelatedProduct />
+
                 </React.Fragment>
             )}
         </React.Fragment>

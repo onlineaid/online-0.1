@@ -54,6 +54,8 @@ export const getProducts = ( keyword= '', currentPage = 1, price, category, rati
 
         const { data } = await axios.get(link)
 
+        // console.log(data)
+
         dispatch({
             type: ALL_PRODUCTS_SUCCESS,
             payload: data

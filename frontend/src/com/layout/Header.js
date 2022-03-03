@@ -1,4 +1,4 @@
-import React, {useState,useEffect, useRef} from 'react';
+import React, {useState } from 'react';
 import { Link } from 'react-router-dom'
 import ShoppingCartSharpIcon from '@material-ui/icons/ShoppingCartSharp';
 
@@ -45,7 +45,7 @@ function Header() {
                     <div className="logo_location">
                         <div className="navbar-brand">   
                         <Nav />                     
-                            <Link to="/" class='text-decoration-none'>
+                            <Link to="/" className='text-decoration-none'>
                                 <img src="../images/shopit_logo2.png" alt="Logo" />
                             </Link>
                         </div>

@@ -443,8 +443,7 @@ input:checked + .slider:before {
 }
 
 
-#login_btn,
-#view_btn {
+#login_btn {
   background-color: var(--main-color);
   padding: 0.4rem 1.8rem;
   font-family: calibri;
